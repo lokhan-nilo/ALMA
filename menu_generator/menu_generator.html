@@ -1,0 +1,60 @@
+<!DOCTYPE>
+<html lang="bg">
+<meta charset="utf-8" />
+
+<head>
+    <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+    <script>
+        var config = {
+            apiKey: "AIzaSyBch97dQuSayarcFVa3tsG3MxrcLke8LV0",
+            authDomain: "asti-2d7bd.firebaseapp.com",
+            databaseURL: "https://asti-2d7bd.firebaseio.com",
+            storageBucket: "asti-2d7bd.appspot.com",
+        };
+        firebase.initializeApp(config);
+        firebase.auth().signInWithEmailAndPassword('bgtspen@gmail.com', 'firebase').catch(function(error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            console.log('error code: ' + errorCode);
+            alert('Error:' + errorCode);
+        });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/menu.js"></script>
+
+    <style type="text/css">
+        #item {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        <form class="menuForm">
+            <div id="soups">
+                <p>
+                    СУПИ
+                    <button class="addSoup" type="button">Добави</button>
+                </p>
+            </div>
+            <div id="main">
+                <p>
+                    ОСНОВНО
+                    <button class="addMain" type="button">Добави</button>
+                </p>
+            </div>
+            <div id="dessert">
+                <p>
+                    ДЕСЕРТИ
+                    <button class="addDessert" type="button">Добави</button>
+                </p>
+            </div>
+    </p>
+
+    <input type="submit" value="Направи меню">
+    </form>
+
+</body>
+
+</html>

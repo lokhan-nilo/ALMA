@@ -1,0 +1,70 @@
+<!DOCTYPE>
+<html lang="bg">
+<meta charset="utf-8" />
+
+<head>
+    <style type="text/css">
+        <!-- Keep header colors when printing --> 
+        body {
+            -webkit-print-color-adjust: exact;
+        }
+        
+        table {
+            width: 100%;
+        }
+        
+        td {
+            font-size: larger;
+        }
+        
+        #menu_item_left {
+            align: left;
+        }
+        
+        #menu_item_right {
+            align: right;
+        }
+        
+        caption {
+            background-color: grey;
+        }
+        
+        #menu_container {
+            width: 100%;
+            height: 100%;
+            margin: 10px;
+        }
+        
+        #column_menu {
+            border: 1px solid black;
+            padding: 2px;
+            float: left;
+            width: 48%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="menu_container">
+        {% for n in range(8) %}
+        <div id="column_menu">
+            {% for category in categories %}
+            <table>
+                <caption style="caption">{{ category['category'] }}</caption>
+                {% for item in category['items'] %}
+                <tr>
+                    <td align="left">{{ item['name'] }} </td>
+                    <td align="right">{{ item['price'] }}</td>
+                </tr>
+                {% endfor %}
+
+            </table>
+            {% endfor %}
+        </div>
+
+        {% endfor %}
+    </div>
+
+</body>
+
+</html>

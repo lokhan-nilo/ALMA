@@ -1,5 +1,11 @@
 from model.menu_item import MenuItem
 from model.menu_header import MenuHeader
+from menu import parser_test as Bu
+
+import sys
+# Bu
+
+sys.exit("LOL")
 
 def printCategory(category, items):
     print(category.name)
